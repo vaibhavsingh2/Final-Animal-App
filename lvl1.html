@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Level 1</title>
+    <style>
+    body {
+        background-color: black;
+      
+    }
+
+    text{
+      color: white;
+    }
+
+    h1, h3{
+      color: white;
+    }
+    
+    ul {
+      display: flex;
+      list-style: none;
+      background-color: #333;
+      margin: 0;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      text-align: center;
+
+    }
+    li a {
+      text-decoration: none;
+      color: greenyellow;
+      padding: 5px 10px;
+    }
+
+    </style>
+
+    <script type="text/javascript" src="brython.js"></script>
+</head>
+<body onload="brython()">
+    <center><h1 style="font-size: 40px;">From Crisis to Conservation: Exploring Endangered Species and Solutions </h1></center>
+
+    <center>
+        <ul>
+            <li><a href="homepage.html">Home Page</a></li>
+            <li><a href="glossary.html">Endangerment Glossary</a></li>
+            <li><a href="graphs.html">Conservation Status and Graphs</a></li>
+        
+        <li><a href="lvl1.html">Animal Word Hunt</a></li>
+            <li><a href="conservation.html">Conservation Methods</a></li>
+            <li><a href="initiatives.html">Conservation initiatives</a></li>
+
+        
+          </ul>
+          <br><br>
+
+    <h1>Word Hunt</h1>
+    <h3>Level 1</h3>
+
+    <img src="./images/lvl1.PNG" alt="Level 1">
+</center>
+<br><br>
+    <text style="color:darkred; font-size: 20px;">In the above word hunt are names of 12 animals hidden. You have to find them and write them in the 12 boxes given below. Then click submit button after writing all.</text>
+    <br><br><br>
+    <input type="text" id="inputBox1" placeholder="Write the animal name">
+    
+    <input type="text" id="inputBox2" placeholder="Write the animal name">
+    <input type="text" id="inputBox3" placeholder="Write the animal name">
+    <input type="text" id="inputBox4" placeholder="Write the animal name">
+    <input type="text" id="inputBox5" placeholder="Write the animal name">
+    <input type="text" id="inputBox6" placeholder="Write the animal name"><br><br>
+    <input type="text" id="inputBox7" placeholder="Write the animal name">
+    <input type="text" id="inputBox8" placeholder="Write the animal name">
+    <input type="text" id="inputBox9" placeholder="Write the animal name">
+    <input type="text" id="inputBox10" placeholder="Write the animal name">
+    <input type="text" id="inputBox11" placeholder="Write the animal name">
+    <input type="text" id="inputBox12" placeholder="Write the animal name">
+    <br><br><br>
+
+    <button id="submitButton">Submit</button>
+    <button id="level2Button" style="display: none;">Level 2</button>
+
+    <p style="font-size: 30px; color:aqua;">Current Score: <span id="scoreDisplay">0</span></p>
+
+    <script type="text/python">
+        from browser import document, window
+
+        score = 0
+        ans=["DOG", "MONKEY", "EMU", "DEER", "TIGER", "LION", "ZEBRA", "KOALA", "ELEPHANT", "PANDA", "BEAR", "GIRAFFE"]
+        user_ans = []
+
+        def runPython(event):
+            input_value1 = document.getElementById("inputBox1").value.upper()
+            input_value2 = document.getElementById("inputBox2").value.upper()
+            input_value3 = document.getElementById("inputBox3").value.upper()
+            input_value4 = document.getElementById("inputBox4").value.upper()
+            input_value5 = document.getElementById("inputBox5").value.upper()
+            input_value6 = document.getElementById("inputBox6").value.upper()
+            input_value7 = document.getElementById("inputBox7").value.upper()
+            input_value8 = document.getElementById("inputBox8").value.upper()
+            input_value9 = document.getElementById("inputBox9").value.upper()
+            input_value10 = document.getElementById("inputBox10").value.upper()
+            input_value11 = document.getElementById("inputBox11").value.upper()
+            input_value12 = document.getElementById("inputBox12").value.upper()
+
+            if ans.count(input_value1) == 1 and user_ans.count(input_value1) == 0:
+                add_to_score(1)
+                user_ans.append(input_value1)
+            else:
+                add_to_score(0)
+
+            if ans.count(input_value2) == 1 and user_ans.count(input_value2) == 0:
+                add_to_score(1)
+                user_ans.append(input_value2)
+
+            else:
+                add_to_score(0)
+
+            if ans.count(input_value3) == 1 and user_ans.count(input_value3) == 0:
+                add_to_score(1)
+                user_ans.append(input_value3)
+
+            else:
+                add_to_score(0)
+
+            if ans.count(input_value4) == 1 and user_ans.count(input_value4) == 0:
+                add_to_score(1)
+                user_ans.append(input_value4)
+
+            else:
+                add_to_score(0)
+
+            if ans.count(input_value5) == 1 and user_ans.count(input_value5) == 0:
+                add_to_score(1)
+                user_ans.append(input_value5)
+
+            else:
+                add_to_score(0)
+
+            if ans.count(input_value6) == 1 and user_ans.count(input_value6) == 0:
+                add_to_score(1)
+                user_ans.append(input_value6)
+
+            else:
+                add_to_score(0)
+
+            if ans.count(input_value7) == 1 and user_ans.count(input_value7) == 0:
+                add_to_score(1)
+                user_ans.append(input_value7)
+
+            else:
+                add_to_score(0)
+
+            if ans.count(input_value8) == 1 and user_ans.count(input_value8) == 0:
+                add_to_score(1)
+                user_ans.append(input_value8)
+
+            else:
+                add_to_score(0)
+
+            if ans.count(input_value9) == 1 and user_ans.count(input_value9) == 0:
+                add_to_score(1)
+                user_ans.append(input_value9)
+
+            else:
+                add_to_score(0)
+
+            if ans.count(input_value10) == 1 and user_ans.count(input_value10) == 0:
+                add_to_score(1)
+                user_ans.append(input_value10)
+
+            else:
+                add_to_score(0)
+
+            if ans.count(input_value11) == 1 and user_ans.count(input_value11) == 0:
+                add_to_score(1)
+                user_ans.append(input_value11)
+
+            else:
+                add_to_score(0)
+
+            if ans.count(input_value12) == 1 and user_ans.count(input_value12) == 0:
+                add_to_score(1)
+                user_ans.append(input_value12)
+
+            else:
+                add_to_score(0)
+
+            document.getElementById("submitButton").style.display = "none"
+
+
+            if score > 10:
+                document.getElementById("level2Button").style.display = "inline-block"
+
+        def add_to_score(value):
+            global score
+            score += value
+            document.getElementById("scoreDisplay").textContent = str(score)
+
+        def goto_level2(event):
+            window.location.href = "lvl2.html"
+
+        # Attach event listener to the submit button
+        document.getElementById("submitButton").bind("click", runPython)
+
+        # Attach event listener to the Level 2 button
+        document.getElementById("level2Button").bind("click", goto_level2)
+    </script>
+</body>
+</html>
